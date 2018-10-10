@@ -1,0 +1,76 @@
+/* ywindex.wxss */
+page{
+  height: 100%
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #353535;
+}
+
+.usermotto {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/*info*/
+.info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.infotext{
+  text-align: center;
+  color: #e64340;
+  font-size: 14pt;
+  margin-top: 50rpx;
+}
+
+/*random*/
+.random {
+  margin-top: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.random-image {
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 10%;
+}
+.random-text {
+  width: 500rpx;
+  text-align: center;
+  color: #09BB07;
+  font-size: 17pt;
+  margin-top: 15rpx;
+}
+
+.random-button {
+  margin-top: 60rpx;
+  width: 400rpx;
+}
+
+.add-button {
+  margin-top: 20rpx;
+  width: 400rpx;
+  margin-bottom: 30rpx;
+}
+
+.make-button {
+  width: 400rpx;
+  margin-bottom: 30rpx;
+}

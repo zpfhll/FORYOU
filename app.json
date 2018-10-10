@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/make/make",
+    "pages/ywindex/ywindex",
+    "pages/top/top",
+    "pages/detail/detail",
+    "pages/list/list",
+    "pages/ywadd/ywadd"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#353535",
+    "navigationBarTitleText": "烧卖FORYOU",
+    "navigationBarTextStyle": "white"
+  },
+  "cloud": true
+}

@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container" style="background-image: url('{{background}}')">
+  <view  class="userinfo">
+    <open-data class="userinfo-avatar" type="userAvatarUrl" background-size="cover"></open-data>
+    <view class="usermotto">
+      <open-data class="userinfo-nickname" type="userNickName"></open-data>
+      <text class="userinfo-nickname">{{motto}}</text>
+    </view>
+      <view class="cook">
+    <view class="tool" style="flex-direction:row">
+      <image class="image-cook-v"  src="/images/v/carrot.png" mode="aspectFill"></image>
+      <image class="image-cook-v"  src="/images/v/eggplant.png" mode="aspectFill"></image>
+      <image class="image-cook-v"  src="/images/v/mushroom.png" mode="aspectFill"></image>
+      <image class="timer" animation="{{animationData}}"  src="/images/v/timer.png" mode="aspectFill"></image>
+      <image class="image-cook-v"  src="/images/v/pepper.png" mode="aspectFill"></image>
+      <image class="image-cook-v"  src="/images/v/potato.png" mode="aspectFill"></image>
+      <image class="image-cook-v"  src="/images/v/tomatoes.png" mode="aspectFill"></image>
+    </view>
+    <view class="cook-land"></view>
+    <view class="tool" style="flex-direction:row">
+      <image class="image-cook"  src="/images/v/knife.png" mode="aspectFill"></image>
+      <image class="image-cook"  src="/images/v/long.png" mode="aspectFill"></image>
+      <image class="image-cook"  src="/images/v/scoop.png" mode="aspectFill"></image>
+      <image class="image-cook"  src="/images/v/skimmer.png" mode="aspectFill"></image>
+      <image class="image-cook"  src="/images/v/cooking.png" mode="aspectFill"></image>
+      <image class="image-cook"  src="/images/v/kitchen.png" mode="aspectFill"></image>
+    </view>
+  </view>
+  </view>
+
+  <view class="{{showView?'button-show':'button-hide'}}">
+    <!-- <button type="defualt" bindtap="random">下馆子</button> -->
+    <button type="primary" bindtap="move">备菜</button>
+  </view>
+</view>

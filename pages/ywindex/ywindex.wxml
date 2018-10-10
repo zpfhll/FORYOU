@@ -1,0 +1,24 @@
+<!--ywindex.wxml-->
+
+<view class="classname">
+  <view  class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <view class="usermotto">
+      <text class="userinfo-nickname">{{userInfo.nickName}}{{motto}}</text>
+    </view>
+  </view>
+
+<scroll-view scroll-y='true'>
+  <view class="info">
+      <text class="infotext">吃什么不重要，重要的是吃什么！</text>
+  </view>
+
+  <view class="random">
+      <image class="random-image" src="{{foodUrl}}" background-size="cover"></image>
+      <text class="random-text">{{foodName}}</text>
+      <button class = "random-button" type="primary" bindtap="random">抽签</button>
+      <button class = "add-button" type="default" bindtap="add">添加</button>
+      <button class = "make-button" type="default" bindtap="make">开火</button>
+  </view>
+</scroll-view>
+</view>

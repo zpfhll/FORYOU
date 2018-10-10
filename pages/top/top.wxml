@@ -1,0 +1,67 @@
+
+<!--top.wxml-->
+<view class="top" style="background-image: url('{{background}}')">
+  <scroll-view scroll-y='true' style="height:{{scrollHeight}}rpx">
+    <swiper class='swiper' autoplay='true' indicator-dots='true' indicator-active-color='#353535' circular='true'>
+      <block wx:for="{{recommends}}" wx:for-item="recommend" wx:key="*this">
+        <swiper-item class="swiper-item">
+          <image class="swiper-image-cook" src="{{recommend.desImage}}" mode="aspectFill" bindtap="itemClick" data-index="{{recommend.id}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class="search-view" style="flex-direction:row">
+      <input class="search-input" placeholder="查询内容" confirm-type="search" bindconfirm="searchCooking" bindinput="searchInput"/>
+      <icon size="20" type="search" style="margin-left:40rpx;margin-top:10rpx" bindtap="searchCooking" />
+       <picker bindchange="searchTag" value="{{index}}" range="{{tags}}">
+          <text class='search-class-text'>类别</text>
+      </picker>
+    </view>
+    <!-- <view class="search-history-view" style="flex-direction:row">
+      <block wx:for="{{searchKeys}}" wx:for-item="key" wx:key="*this">
+        <text class="search-history-text" bindtap="searchCooking" data-index="{{key}}">{{key}}</text>
+      </block>
+      <button type="primary" class="button-random" bindtap="random">下馆子</button>
+    </view> -->
+
+    <view data-index='早餐' bindtap="showMoreCooking" class="title-view" style="flex-direction:row">
+      <text class="img-text-small">早餐</text>
+      <image class="title-img" src="/images/left.png"></image>
+    </view>
+    <view class="flex-row">
+      <block wx:for="{{breakfast}}" wx:for-item="item" wx:key="*this">
+        <view class="img" style="height:{{itemWidth + 50}}px" bindtap="itemClick" data-index="{{item.id}}">
+          <image src="{{item.desImage}}" style="width:{{itemWidth}}px;height:{{itemWidth}}px" mode="aspectFill"></image>
+          <text class="img-text">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+    <view data-index='午餐' bindtap="showMoreCooking" class="title-view" style="flex-direction:row">
+      <text class="img-text-small">午餐</text>
+      <image class="title-img" src="/images/left.png"></image>
+    </view>
+    <view class="flex-row">
+      <block wx:for="{{lunch}}" wx:for-item="item" wx:key="*this">
+        <view class="img" style="height:{{itemWidth + 50}}px" bindtap="itemClick" data-index="{{item.id}}">
+          <image src="{{item.desImage}}" style="width:{{itemWidth}}px;height:{{itemWidth}}px" mode="aspectFill"></image>
+          <text class="img-text">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+    <view data-index='晚餐' bindtap="showMoreCooking" class="title-view" style="flex-direction:row">
+      <text class="img-text-small">晚餐</text>
+      <image class="title-img" src="/images/left.png"></image>
+    </view>
+    <view class="flex-row">
+      <block wx:for="{{dinner}}" wx:for-item="item" wx:key="*this">
+        <view class="img" style="height:{{itemWidth + 50}}px" bindtap="itemClick" data-index="{{item.id}}">
+          <image src="{{item.desImage}}" style="width:{{itemWidth}}px;height:{{itemWidth}}px" mode="aspectFill"></image>
+          <text class="img-text">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  <view class="{{showButton?'button-view':'button-hide'}}">
+    <button type="primary" class="button-add" bindtap="makeFood">做饭</button>
+  </view>
+  </scroll-view>
+</view>

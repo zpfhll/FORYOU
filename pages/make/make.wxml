@@ -1,0 +1,62 @@
+
+
+<view class="classname">
+  <scroll-view scroll-y='true' class='scroll-view'>
+    <view class="foodView" style="flex-direction:column">
+      <input class="food" maxlength="15" placeholder="*请输入菜名" placeholder-class="placeholder" confirm-type="next" bindblur="setName" bindconfirm="setName" />
+    </view>
+    <!--<view class="foodView" style="flex-direction:column">
+      <input class="food" placeholder="*标签" placeholder-class="placeholder" confirm-type="next" bindblur="setTag" bindconfirm="setTag" />
+    </view>-->
+    <view class="food-tag-View" style="flex-direction:row">
+      <picker bindchange="setTag" value="{{index}}" range="{{tags}}">
+        <view class="food-tag">
+            {{tags[index]}}
+        </view>
+      </picker>
+      <view class="food-tag-add-view" bindtap="showAddTag">
+        <image class="food-tag-add" src="/images/add.png"></image>
+      </view>
+    </view>
+
+    <view class="describeImage-text-view">
+      <text class="describeImage-text">*展示图</text>
+    </view>
+    <view class="describeImage-view" style="flex-direction:row">
+      <image data-index="-1" class="describeImage" src="{{describeImage}}" mode="aspectFill" bindtap="changeImage"></image>
+    </view>
+    <view class="foodView-1" style="flex-direction:column">
+      <textarea class="food-1" maxlength="200" placeholder="描述" bindblur="setDescribe" bindconfirm="setDescribe" />
+    </view>
+    <view class="steps-view">
+      <block wx:for="{{steps}}" wx:for-item="step" wx:key="key">
+        <view data-index="{{step.stepCode}}" class="step-view" style="margin-right:{{step.marginR}}rpx;margin-left:{{-step.marginR}}rpx;flex-direction:row" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
+          <view class="step-content-view" style="flex-direction:column">
+            <text class="steps-text">步骤:{{step.stepCode}}</text>
+            <textarea data-index="{{step.stepCode}}" class="teps-content-view" value="{{step.stepContent}}" placeholder="步骤描述" auto-height="true" bindblur="saveStepContent" bindconfirm="saveStepContent" />
+            <image data-index="{{step.stepCode}}" class="steps-image" src="{{step.stepImage}}" bindtap="changeImage" mode="aspectFit"></image>
+          </view>
+
+          <!--<text class="delete-text">删除</text>-->
+          <view class="delete-view" data-index="{{step.stepCode}}" bindtap="deleteStep">
+            <text class="delete-text">删除</text>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="add-button" style="flex-direction:column">
+      <button type="default" bindtap="addStep">添加步骤</button>
+    </view>
+    <view class="{{isShowDoneButton?'add-button':'button-hide'}}" style="flex-direction:column">
+      <button type="primary" bindtap="doneInput">关火</button>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="tag-add-view" hover='true' style="flex-direction:column;" animation="{{animationData}}">
+      <input class="tag-add-input" focus="{{addTag}}"  bindblur="hideAddTag" bindconfirm="addTag" />
+      <text class="tag-add-text" >*请输入标签</text>
+      <view class="tag-add-button-view" style="flex-direction:row">
+        <button class="tag-add-button" plain='true' type="warn" bindtap="hideAddTag">取消</button>
+      </view>
+</view>

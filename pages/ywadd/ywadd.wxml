@@ -1,0 +1,13 @@
+<!--ywadd.wxml-->
+<scroll-view scroll-y='true' >
+    <view class="foodView" style="flex-direction:column">
+      <input class="food" maxlength="15" placeholder="你以后还会在吃的菜名" placeholder-class="placeholder" confirm-type="next" bindblur="setName" bindconfirm="setName" />
+    </view>
+    <view class="foodView" style="flex-direction:column">
+      <input class="food" maxlength="15" placeholder="菜系" placeholder-class="placeholder" confirm-type="next" bindblur="setTag" bindconfirm="setTag" />
+    </view>
+     <view class="classname" bindtap="showImage">
+        <image class="foodimage" src="{{imageUrl}}" background-size="cover"></image>
+     </view>
+     <button class="okbutton" type="primary" bindtap="ok">OK</button>
+</scroll-view>

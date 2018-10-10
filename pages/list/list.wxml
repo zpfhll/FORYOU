@@ -1,0 +1,13 @@
+<view class="list">
+  <scroll-view scroll-y='true' class="scrooll-class" style="height:{{scrollHeight}}rpx">
+    <text class="title-text">{{title}}</text>
+    <view class="flex-row">
+      <block wx:for="{{showData}}" wx:for-item="item" wx:key="*this">
+        <view class="img" style="height:{{itemWidth + 50}}px" bindtap="itemClick" data-index="{{item.id}}">
+          <image src="{{item.desImage}}" style="width:{{itemWidth}}px;height:{{itemWidth}}px" mode="aspectFill"></image>
+          <text class="img-text">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

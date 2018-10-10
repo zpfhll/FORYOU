@@ -1,0 +1,82 @@
+/**index.wxss**/
+page{
+  height: 100%
+}
+/* .container{
+  background-image: url('https://666f-fo-5f0c75-1253527758.tcb.qcloud.la/appImg/background.png');
+  background-repeat: round;
+} */
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cook{
+  margin-top: 100rpx;
+  align-items: center;
+}
+
+.tool{
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.image-cook{
+  width: 85rpx;
+  height: 85rpx;
+  transform: rotate(-45deg)
+}
+.image-cook-v{
+  width: 65rpx;
+  height: 65rpx;
+  margin-left: 10rpx;
+  margin-bottom: -10rpx;
+}
+.timer{
+  width: 70rpx;
+  height: 90rpx;
+}
+
+.cook-v{
+  margin-top: 200rpx
+}
+
+.cook-land{
+  width: 95%;
+  height: 15rpx;
+  background-color: white;
+  border-radius: 10%;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  overflow:hidden;
+  display:block;
+}
+
+.userinfo-nickname {
+  color: #f8f6f6;
+}
+
+.usermotto {
+  margin-top: 10px;
+  text-align: center;
+}
+
+button{
+  width: 200rpx;
+  height: 100rpx;
+  margin-top: 300rpx
+}
+
+.button-show{
+  display: flex;
+  flex-direction: row;
+}
+.button-hide{
+  display: none;
+}

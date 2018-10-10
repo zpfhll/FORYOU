@@ -1,0 +1,37 @@
+page{
+  height: 100%
+}
+
+.list{
+  background-image: url('https://www.zqiyis.xyz/public/images/cusImg/top-background.png');
+  background-repeat: round;
+  align-items: center;
+  height: 100%
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.img{
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin-top: 20rpx
+}
+.img-text{
+  margin-top: 5rpx;
+  font-size: 14pt;
+  color: white
+}
+
+.title-text{
+  margin-left: 15rpx;
+  margin-top: 3rpx;
+  font-size: 13pt;
+  color: #353535;
+}

@@ -1,0 +1,53 @@
+<view class="classname">
+  <scroll-view scroll-y='true' class='scroll-view'>
+    <view class="{{isShow?'classname':'hide'}}">
+      <image class="show-image" src="{{describeImage}}" bindtap="preview" mode="aspectFill" data-index='-1'></image>
+      <view class="show" style="flex-direction:row">
+        <text class="showName">{{cookingName}}</text>
+        <text class="showTag">({{cookingTag}})</text>
+      </view>
+      <view class="show" style="flex-direction:row">
+        <text class="showTag">{{cookingDescribe}}</text>
+      </view>
+    </view>
+    <view class="{{isShow?'hide':'classname'}}">
+      <view class="foodView" style="flex-direction:column">
+        <!-- <input class="food" value='{{cookingName}}' maxlength="15" placeholder="*请输入菜名" placeholder-class="placeholder" confirm-type="next" bindblur="setName" bindconfirm="setName" /> -->
+      </view>
+      <view class="foodView" style="flex-direction:column">
+        <!-- <input class="food" value='{{cookingTag}}' placeholder="*标签" placeholder-class="placeholder" confirm-type="next" bindblur="setTag" bindconfirm="setTag" /> -->
+      </view>
+      <view class="describeImage-view" style="flex-direction:column">
+        <text class="describeImage-text">*展示图</text>
+        <image data-index="-1" class="describeImage" src="{{describeImage}}" mode="aspectFill" bindtap="changeImage"></image>
+      </view>
+      <view class="foodView-1" style="flex-direction:column">
+        <!-- <textarea class="food-1" value='{{cookingDescribe}}' maxlength="200" placeholder="描述" bindblur="setDescribe" bindconfirm="setDescribe" /> -->
+      </view>
+    </view>
+    <view class="steps-view">
+      <block wx:for="{{steps}}" wx:for-item="step" wx:key="*this">
+
+        <view class="{{isShow?'hide':'step-view'}}" style="flex-direction:column">
+          <!-- <text class="steps-text">步骤:{{step.stepCode}}</text> -->
+          <!-- <textarea data-index="{{step.stepCode}}" class="teps-content-view" value="{{step.stepContent}}" placeholder="步骤描述" auto-height="true" bindblur="saveStepContent" bindconfirm="saveStepContent" /> -->
+          <!-- <image data-index="{{step.stepCode}}" class="steps-image" src="{{step.stepImage}}" bindtap="changeImage" mode="aspectFit"></image> -->
+        </view>
+
+        <view class="{{isShow?'step-view':'hide'}}" style="flex-direction:column">
+          <text class="steps-text">步骤:{{step.stepCode}}</text>
+          <text class="show-step">{{step.stepContent}}</text>
+          <image  class="{{step.isShowImage?'steps-image':'hide'}}" src="{{step.stepImage}}" data-index='{{step.stepImage}}' bindtap="preview" mode="aspectFit"></image>
+        </view>
+
+      </block>
+    </view>
+    <view class="{{isShow?'hide':'add-button'}}" style="flex-direction:column">
+      <button type="default" bindtap="addStep">添加步骤</button>
+    </view>
+    <view class="{{!isShow&&isShowDoneButton?'add-button':'hide'}}" style="flex-direction:column">
+      <button type="primary" bindtap="doneInput">关火</button>
+    </view>
+    <button class="{{isCanDelete?'classname':'hide'}}" type="warn" bindtap="deleteCooking">删除</button>
+  </scroll-view>
+</view>
